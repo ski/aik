@@ -12,7 +12,7 @@ config:
       device: cuda:0
       # if a trigger word is specified, it will be added to captions of training data if it does not already exist
       # alternatively, in your captions you can add [trigger] and it will be replaced with the trigger word
-#      trigger_word: "p3r5on"
+      trigger_word: "anj5k5"
       network:
         type: "lora"
         linear: 16
@@ -31,7 +31,7 @@ config:
         # images will automatically be resized and bucketed into the resolution specified
         # on windows, escape back slashes with another backslash so
         # "C:\\path\\to\\images\\folder"
-        - folder_path: "/path/to/images/folder"
+        - folder_path: "/content/dataset"
           caption_ext: "txt"
           caption_dropout_rate: 0.05  # will drop out the caption 5% of time
           shuffle_tokens: false  # shuffle caption order, split by commas
@@ -74,7 +74,9 @@ config:
         height: 1024
         prompts:
           # you can add [trigger] to the prompts here and it will be replaced with the trigger word
-#          - "[trigger] holding a sign that says 'I LOVE PROMPTS!'"\
+          - "[trigger] holding a sign that says 'Paris See!'"
+          - "[trigger] woman with red hair, playing chess at the park, bomb going off in the background"
+          - "[trigger] woman holding a coffee cup, in a beanie, sitting at a cafe"
           - "woman with red hair, playing chess at the park, bomb going off in the background"
           - "a woman holding a coffee cup, in a beanie, sitting at a cafe"
           - "a horse is a DJ at a night club, fish eye lens, smoke machine, lazer lights, holding a martini"
@@ -86,7 +88,7 @@ config:
           - "a man holding a sign that says, 'this is a sign'"
           - "a bulldog, in a post apocalyptic world, with a shotgun, in a leather jacket, in a desert, with a motorcycle"
         neg: ""  # not used on flux
-        seed: 42
+        seed: 101110
         walk_seed: true
         guidance_scale: 4
         sample_steps: 20
